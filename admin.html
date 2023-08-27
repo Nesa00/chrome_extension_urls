@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="admin.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>URLs Saver Extension Settings</h1>
+    </header>
+	<!-- Days, Hours, and Minutes selector -->
+	<div class="time-selector">
+		<label>
+			Days:
+			<select id="days">
+				<!-- Options go from 0 to, say, 30 days -->
+				<!-- JavaScript will populate these -->
+			</select>
+		</label>
+		<label>
+			Hours:
+			<select id="hours">
+				<!-- Options go from 0 to 23 hours -->
+			</select>
+		</label>
+		<label>
+			Minutes:
+			<select id="minutes">
+				<!-- Options go from 0 to 59 minutes -->
+			</select>
+		</label>
+	</div>
+	<button id="save-timeout">Save</button>
+	<div id="timeout-status">Timeout: Deactivated</div>
+
+
+    
+    <!-- <button id="clear-db">Clear Database</button> -->
+    
+
+    <h2>Stored URLs</h2>
+    <button id="batch-remove">Remove Selected</button>
+	<button id="export-csv">Export to CSV</button>
+	<table>
+		<thead>
+			<tr>
+				<th>
+					<label>
+						<input type="checkbox" id="select-all" class="option-input checkbox">
+					</label>
+				</th>
+				<th>Timestamp</th>
+				<th>URL</th>
+			</tr>
+		</thead>
+		<tbody id="url-list">
+			<!-- The stored URLs will be dynamically populated here -->
+		</tbody>
+	</table>
+	
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

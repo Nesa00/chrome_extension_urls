@@ -3,11 +3,10 @@
   "name": "URL Saver",
   "description": "Save URLs to check later",
   "version": "1.0",
-  "permissions": ["storage", "tabs", "alarms"],
+  "permissions": ["storage", "tabs", "activeTab", "alarms", "notifications"],
   "author": "Nenad Mirkovic",
   "action": {
     "default_popup": "popup.html",
-	//"default_popup": "nemo/main.html",
     "default_icon": {
       "16": "images/icon_16.png",
       "64": "images/icon_64.png",
@@ -21,5 +20,11 @@
   },
   "background": {
   "service_worker": "background.js"
+  },
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
   }
+]
 }

@@ -4,40 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Extension Name</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100px;
-            height: 30px;
-            display: flex;
-        }
-        .left, .right {
-            width: 50%;
-            height: 100%;
-        }
-        .left {
-            background-color: #00FF00;
-        }
-        .right {
-            background-color: #0000FF;
-        }
-        button {
-            background: none;
-            border: none;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="popup.css">
 </head>
 <body>
     <div class="left">
-        <button id="left-button"></button>
-    </div>
-    <div class="right">
-        <button id="right-button"></button>
-    </div>
+		<a href="#" id="left-button"></a>
+	</div>
+	<div class="center">
+		<a href="#" id="center-button"></a>
+	</div>
+	<div class="right">
+		<a href="#" id="right-button"></a>
+	</div>
+
     <script src="popup.js"></script>
 </body>
 </html>

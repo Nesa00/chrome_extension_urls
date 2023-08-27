@@ -1,0 +1,101 @@
+header {
+    background-color: #f4f4f4;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+header h2 {
+    font-size: 2em;  /* Adjust as desired */
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.time-selector label {
+    margin-right: 20px;
+}
+
+.time-selector select {
+    width: 60px;
+}
+
+#timeout-status {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* Custom checkbox */
+.custom-checkbox {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #555;
+  display: inline-block;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.custom-checkbox input {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.custom-checkbox::before, .custom-checkbox::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 3px;
+  background-color: red;
+  transform-origin: center;
+}
+
+.custom-checkbox::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.custom-checkbox::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.custom-checkbox input:checked ~ ::before,
+.custom-checkbox input:checked ~ ::after {
+  opacity: 1;
+}

@@ -1,0 +1,60 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 90px;
+	height: 30px;
+	display: flex;
+	align-items: center; /* Align vertically */
+	justify-content: center; /* Align horizontally */
+	background-color: transparent; /* Transparent background */
+	border-radius: 5px; /* Add rounded corners */
+	overflow: hidden; /* Hide overflow to maintain rounded corners */
+}
+
+.left, .center, .right {
+	width: 30px; 
+	height: 100%;
+}
+body, div, button {
+	margin: 0;
+	padding: 0;
+}
+.left {
+	background-color: #4CAF50;
+}
+.left:hover {
+	background-color: #388E3C; /* A slightly darker green */
+}
+
+.center {
+	background-color: #CC0000; /* Red */
+}
+.center:hover {
+	background-color: #990000; /* A slightly darker red */
+}
+
+.right {
+	background-color: #2196F3;
+}
+.right:hover {
+	background-color: #1976D2; /* A slightly darker blue */
+}
+
+
+button {
+	outline: none;
+	background: none;
+	border: none;
+	width: 30px;
+	height: 100%;
+	cursor: poin ter;
+}
+a {
+	display: block;
+	background: none;
+	border: none;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	text-decoration: none; /* To remove underline */
+}
