@@ -52,9 +52,9 @@ function updateTimeoutColor() {
                 //console.log('dbTime:', timestamp);
                 //console.log('elapsedTime:', elapsedTime);
                 //console.log('percentage:', percentage);
-                //console.log('color:', color);
+                console.log('color:', color);
 
-                urlListTbody.rows[i].style.backgroundColor = color;
+                urlListTbody.rows[i].cells[1].style.backgroundColor = color;
             }
         }
     });
@@ -124,17 +124,17 @@ document.addEventListener('DOMContentLoaded', function() {
 				const percentage = Math.min(100, (elapsedTime / (timeoutInMinutes * 60 * 1000)) * 100);
 				const color = getColorForPercentage(percentage);
 					tableRowsHtml += `
-						<tr style="background-color: ${color}">
+						<tr>
 							<td>
-								<div class="checkbox checkbox-danger error-checkbox">
-									<input id="checkbox-${index}" class="select-row" type="checkbox" data-url="${entry.url}">
-									<label for="checkbox-${index}"></label>
-								</div>
+								<label for="checkbox-${index}">
+									<input id="checkbox-${index}" class="select-row option-input checkbox" type="checkbox" data-url="${entry.url}">
+								</label>
 							</td>
 							<td>${formatTimestamp(entry.timestamp)}</td>
-							<td><a href="${entry.url}" class="preview" target="_blank">${entry.title || entry.url}</a></td>
+							<td><a href="${entry.url}" target="_blank">${entry.title || entry.url}</a></td>
 						</tr>
 					`;
+
 
 					index++;
 				}

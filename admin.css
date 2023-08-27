@@ -20,17 +20,18 @@ body {
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    width: auto;
+    /* border-collapse: separate; */
+    /* border-spacing: 2px; */
+    margin-top: 30px;
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px 12px;
+th, td { 
+    
+    padding: 10px 12px;
     text-align: left;
 }
-
+ 
 th {
     background-color: #f2f2f2;
 }
@@ -56,46 +57,42 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+thead th, tbody td:first-child {
+    text-align: center;
+    vertical-align: middle;
+}
 /* Custom checkbox */
-.custom-checkbox {
-  position: relative;
-  width: 25px;
-  height: 25px;
-  border: 2px solid #555;
-  display: inline-block;
-  background-color: #fff;
-  cursor: pointer;
+.option-input {
+	
+    position: relative;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 3px solid #007BFF;
+    border-radius: 4px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    outline: none;
 }
 
-.custom-checkbox input {
-  opacity: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  z-index: 1;
+.option-input:checked {
+    border: 2px solid #007BFF;
+    /* background-color: #ffffff; */
 }
 
-.custom-checkbox::before, .custom-checkbox::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 18px;
-  height: 3px;
-  background-color: red;
-  transform-origin: center;
+.option-input::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    content: '❌';
+    font-size: 12px;
+    line-height: 18px;
+    transition: transform 0.1s ease-in-out;
 }
 
-.custom-checkbox::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.custom-checkbox::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-.custom-checkbox input:checked ~ ::before,
-.custom-checkbox input:checked ~ ::after {
-  opacity: 1;
+.option-input:checked::before {
+    transform: translate(-50%, -50%) scale(1);
 }
