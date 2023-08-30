@@ -1,6 +1,6 @@
 function updateBadgeForUrl(tabUrl, tabId) {
     chrome.storage.local.get(['urls'], function(result) {
-        const storedUrls = result.urls.map(entry => entry.url);
+        const storedUrls = result.urls ? result.urls.map(entry => entry.url) : [];
         
         if (storedUrls.includes(tabUrl)) {
             // URL is in the database
@@ -71,3 +71,16 @@ function removeUrl(url) {
         }
     });
 }
+
+// chrome.storage.local.get(['urls'], function(result) {
+//     if (result.urls === undefined) {
+//         console.log('The "urls" key does not exist in chrome.storage.local.');
+//         // You can initialize the "urls" key here if needed
+//         chrome.storage.local.set({urls: []}, function() {
+//             console.log('Initialized the "urls" key in chrome.storage.local.');
+//         });
+//     } else {
+//         console.log('The "urls" key already exists in chrome.storage.local.');
+//         // The "urls" key already exists, so you can use result.urls here
+//     }
+// });

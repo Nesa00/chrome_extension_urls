@@ -7,7 +7,7 @@ document.getElementById('left-button').addEventListener('click', function(event)
         const currentTitle = currentTab.title;
 
         chrome.storage.local.get(['urls'], function(result) {
-            const storedUrls = result.urls.map(entry => entry.url);
+            const storedUrls = result.urls ? result.urls.map(entry => entry.url) : [];
 
             if (storedUrls.includes(currentUrl)) {
                 alert('This URL is already added to the database!');
@@ -34,7 +34,7 @@ document.getElementById('center-button').addEventListener('click', function() {
         console.log('currentUrl:', currentUrl);
 
         chrome.storage.local.get(['urls'], function(result) {
-            var query_db = result.urls;
+            var query_db = result.urls || [];
 
             const updatedUrls = query_db.filter(entry => entry.url !== currentUrl);
             
